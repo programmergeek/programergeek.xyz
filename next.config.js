@@ -3,8 +3,12 @@
  * for Docker builds.
  */
 import "./src/env.js";
-
+import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    experimental: {
+        reactCompiler: false
+    }
+};
 
-export default config;
+export default withPayload(config);
